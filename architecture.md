@@ -12,6 +12,26 @@
 	* **Reasoning:** We decided on storing translations on the client-side because it provides separation and low coupling between the frontend and backend. The database will store IDs that are presented in the appropriate language by the frontend view.
 	* **Who decided:** Daniel
 
+ * **Decision:** TypeScript
+ 	* **Time:** 2024-01-24
+  	* **Reasoning:** Adds type safety and by extension reduces time spent on troubleshooting.
+   	* **Who decided:** Daniel
+
+ * **Decision:** Vitest for tests
+ 	* **Time:** 2024-01-31
+  	* **Reasoning:** Vitest can be automatically configured when initalizing a new Vue 3 project and is thus easy to set up. It is also bundled together with Vue Test Utils which makes it a perfect fit for a Vue SPA.
+   	* **Who decided:** Daniel
+  
+ * **Decision:** Nest `vitest#describe()` when testing nested components
+ 	* **Time:** 2024-01-31
+  	* **Reasoning:** When testing a nested component, for example an input field inside a form, multiple `vitest#describe()` calls should be nested to specify the exact location of the component.
+   	* **Who decided:** Daniel
+  
+ * **Decision:** Pass TypeScript enums defined in `src/components/__test__/custom_test_utils/enums.ts` as arguments to `vitest#describe()` and `vitest#it()` when describing the (1) component, (2) action and (3) time/condition when tested behaviour occurs. Detailed documentation can be found in the aforementioned `enums.ts` file.
+ 	* **Time:** 2024-01-31
+  	* **Reasoning:** Enforces naming conventions. 
+   	* **Who decided:** Daniel
+
 ## Backend architecture
 
 * **Decision:** Microservices
