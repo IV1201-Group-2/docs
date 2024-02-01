@@ -5,10 +5,12 @@ All microservices use a REST API (HTTP GET or POST). All functions should return
 ## HTTP response codes
 
 * **200 OK** - API call was successful. The contents of the returned JSON object depends on the API call.
+* **201 Created** - API call was successful and a new resource was created.
 * **400 Bad Request** - API call failed validation.
 * **401 Unauthorized** - Client is not logged in and tried to access a protected route without permission.
 * **403 Forbidden** - Client is logged in and tried to access an API they don't have access to (for example, applicant tries to call recruiter API).
 * **404 Not Found** - API with that name doesn't exist.
+* **409 Conflict** - API call failed because of a conflict.
 * **500 Internal Server Error** - This should be returned if the server panics or throws an exception.
 
 ## Error response
