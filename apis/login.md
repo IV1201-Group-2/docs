@@ -47,6 +47,11 @@ The token is a JWT token encoded with HS256. The payload should decode to a JSON
 
 User did not provide identity, password or desired role.
 
+#### `MISSING_PASSWORD` (404 Not Found)
+
+User does not have a password in the database.
+They should be informed of what they need to do to set a new password.
+
 #### `WRONG_IDENTITY` (401 Unauthorized)
 
 No account was found with that specific username or email address
