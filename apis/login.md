@@ -2,7 +2,7 @@
 
 This API is used by applicants and recruiters to obtain access to protected routes.
 
-`POST /login?identity={identity}&password={password}&role={role}`
+`POST /api/login?identity={identity}&password={password}&role={role}`
 
 * `identity` - Username OR email address of the account
 * `password` - Password of the account
