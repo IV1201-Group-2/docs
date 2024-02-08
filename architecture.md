@@ -39,6 +39,103 @@
 	* **Reasoning:** Microservices allows the team to work in the languages and frameworks they're most comfortable with. It also lets us scale the project easily.
 	* **Who decided:** The group
 
+### Python-based microservices
+* **Decision:** Layered architecture
+	* **Time:** 2024-01-19
+	* **Reasoning:** It allows for good code organization, separation of concerns, and maintainability
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Object-oriented programming
+	* **Time:** 2024-01-19
+	* **Reasoning:** OOP is a good fit for the microservices we're building. It allows us to model the domain in a natural way and makes the codebase more maintainable.
+	* **Who decided:** Azmeer
+  
+
+* **Decision:** Pipenv for package management
+	* **Time:** 2024-01-19
+	* **Reasoning:** Pipenv is a package manager for Python that is easy to use and has good support for virtual environments.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Flask for web framework
+	* **Time:** 2024-01-19
+	* **Reasoning:** Flask is a lightweight and easy-to-use framework for Python. It's a good fit for the microservices we're building.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Blueprint for routing
+	* **Time:** 2024-01-19
+	* **Reasoning:** Blueprints are a good way to organize routes in Flask. They allow us to group related routes together and make the codebase more maintainable.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Flask-SQLAlchemy for database access
+	* **Time:** 2024-01-19
+	* **Reasoning:** Flask-SQLAlchemy is a popular library for database access in Flask. It provides an easy-to-use ORM and good support for migrations.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Unit tests 
+	* **Time:** 2024-01-25
+	* **Reasoning:** Unit tests are a good way to ensure that the microservices work as expected. They make the codebase more maintainable and reduce time spent on troubleshooting.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Pytest for tests
+	* **Time:** 2024-01-25
+	* **Reasoning:** Pytest is a popular testing framework for Python and is easy to set up. It has good support for fixtures and mocking.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Python 3.9
+	* **Time:** 2024-01-26
+	* **Reasoning:** Python 3.9 is the latest version of Python and has the best performance and security. 
+	* **Who decided:** Azmeer
+
+
+* **Decision:** PEP8 for code formatting
+	* **Time:** 2024-01-26
+	* **Reasoning:** PEP8 is the standard for Python code formatting and is widely used. It makes the codebase more maintainable and readable.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Type hints for type safety
+	* **Time:** 2024-01-29
+	* **Reasoning:** Type hints make the codebase more maintainable and reduce time spent on troubleshooting. They also make the codebase more readable.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Logging for monitoring
+	* **Time:** 2024-02-01
+	* **Reasoning:** Logging is a good way to keep track of what's happening in the microservices. It makes the codebase more maintainable and helps with troubleshooting.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Flake8 for code formatting
+	* **Time:** 2024-02-02
+	* **Reasoning:** Flake8 is a popular code formatter for Python and is easy to set up. It enforces PEP8 and other best practices.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** MyPy for type checking
+	* **Time:** 2024-02-02
+	* **Reasoning:** MyPy is a popular type checker for Python and is easy to set up. It enforces type safety and reduces time spent on troubleshooting.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Pytest-cov for test coverage
+	* **Time:** 2024-02-04
+	* **Reasoning:** Pytest-cov is a popular test coverage tool for Python and is easy to set up. It enforces a high amount of test coverage and reduces time spent on troubleshooting.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Gunicorn for production server
+	* **Time:** 2024-02-07
+	* **Reasoning:** Gunicron is a popular production server for Python, easy to set up and recommended by Heroku. It 
+	  provides good performance and security.
+	* **Who decided:** Azmeer
+
 ## Cloud hosting
 
 * **Decision:** Heroku
