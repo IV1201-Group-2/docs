@@ -15,14 +15,21 @@ The API returns a list of competences with the following structure:
 [
     {
         "competence_id": 0,
-        "competence_name": "Python",
-        "years_of_experience": 5
+        "name": "Python"
     },
     ...
 ]
 ```
 
 ## Error responses
+
+#### `COMPETENCES_NOT_FOUND` (404 Not Found)
+
+No competences were found in the database
+
+#### `COULD_NOT_FETCH_COMPETENCES` (500 Internal Server Error)
+
+There was an issue with the database operation when trying to fetch the competences
 
 #### `UNAUTHORIZED` (401 Unauthorized)
 
