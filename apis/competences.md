@@ -1,6 +1,6 @@
 # Competences Endpoint
 
-`GET /api/application-form/competences`
+`GET /api/application-form/competences/`
 
 ## Additional requirements
 

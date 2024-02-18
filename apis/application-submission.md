@@ -1,6 +1,6 @@
 # Application Submission Endpoint
 
-`POST /api/application-form/submit`
+`POST /api/application-form/submit/`
 
 ## Additional requirements
 

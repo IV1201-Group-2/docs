@@ -1,6 +1,6 @@
 # Personal Info Endpoint
 
-`GET /api/application-form/applicant/personal-info`
+`GET /api/application-form/applicant/personal-info/`
 
 ## Additional requirements
 
