@@ -13,7 +13,7 @@
     "competences": [
         {
             "competence_id": 0,
-            "years_of_experience": 5
+            "years_of_experience": 5.67
         },
         ...
     ],
@@ -37,7 +37,7 @@ The API returns a JSON object with the following structure:
     "competences": [
         {
             "competence_id": 0,
-            "years_of_experience": 5
+            "years_of_experience": 5.67
         },
         ...
     ],
