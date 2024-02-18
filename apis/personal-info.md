@@ -13,12 +13,13 @@ The API returns an object with the following structure:
 
 ```json
 {
-    "id": 0,
-    "first_name": "John",
-    "last_name": "Doe",
+    "id": 1,
+    "name": "John",
+    "surname": "Doe",
+    "pnr": "1234567890",
     "email": "johndoe@example.com",
-    "phone_number": "1234567890",
-    "address": "123 Main St, Anytown, Anystate, 12345"
+    "username": "johndoe",
+    "role": 2
 }
 ```
 
