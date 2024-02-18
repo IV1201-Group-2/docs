@@ -1,27 +1,24 @@
+# Personal Info Endpoint
 
-# Personal Information API
+`GET /api/application-form/applicant/personal-info`
 
-This API endpoint is used to retrieve personal information for the current user.
+## Additional requirements
 
-`GET /api/application-form/applicant/personal-info/`
-
-## Requirements
-
-- The request must include a valid JWT token for authentication.
+* The user must be logged in when calling this API
+* The user's JWT token must be included in the `Authorization` header
 
 ## Successful response
 
-The API returns a JSON object with the personal information of the current user:
+The API returns an object with the following structure:
 
 ```json
 {
-  "id": 123,
-  "name": "John",
-  "surname": "Doe",
-  "pnr": "123456789",
-  "email": "john.doe@example.com",
-  "username": "johndoe",
-  "role": 1
+    "id": 0,
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com",
+    "phone_number": "1234567890",
+    "address": "123 Main St, Anytown, Anystate, 12345"
 }
 ```
 
@@ -29,20 +26,28 @@ The API returns a JSON object with the personal information of the current user:
 
 #### `USER_NOT_FOUND` (404 Not Found)
 
-User not found with the provided id.
+No user was found with the ID specified in the JWT token
 
 #### `COULD_NOT_FETCH_USER` (500 Internal Server Error)
 
-Could not fetch user from the database due to an internal error.
+There was an issue with the database operation when trying to fetch the user's information
 
-#### `INVALID_JWT_TOKEN` (401 Unauthorized)
+#### `UNAUTHORIZED` (401 Unauthorized)
 
-This error occurs when the provided JWT token is not valid.
+User is not logged in (JWT token was not provided or is invalid)
 
-#### `TOKEN_EXPIRED` (401 Unauthorized)
+#### `INVALID_TOKEN` (401 Unauthorized)
 
-This error is returned when the JWT token has expired and is no longer valid.
+The provided JWT token is invalid (e.g., it is expired, not yet valid, or does not contain the required claims)
 
-#### `UNAUTHORIZED` (401 Forbidden)
+#### `TOKEN_NOT_PROVIDED` (401 Unauthorized)
 
-This error is returned when a request is made without a required JWT token or the token is not provided correctly.
+No JWT token was provided in the `Authorization` header
+
+#### `TOKEN_REVOKED` (401 Unauthorized)
+
+The provided JWT token has been revoked
+
+#### `INTERNAL_SERVER_ERROR` (500 Internal Server Error)
+
+An unexpected error occurred
