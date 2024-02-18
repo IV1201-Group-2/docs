@@ -1,43 +1,45 @@
+# Competences Endpoint
 
-# Competences API
+`GET /api/application-form/competences`
 
-This API endpoint is used to retrieve a list of selectable competences.
+## Additional requirements
 
-`GET /api/application-form/competences/`
-
-## Requirements
-
-- The request must include a valid JWT token for authentication.
+* The user must be logged in when calling this API
+* The user's JWT token must be included in the `Authorization` header
 
 ## Successful response
 
-The API returns a JSON array of competences with the following structure:
+The API returns a list of competences with the following structure:
 
 ```json
-{
-  "1": "Programming",
-  "2": "Data Analysis"
-}
+[
+    {
+        "competence_id": 0,
+        "competence_name": "Python",
+        "years_of_experience": 5
+    },
+    ...
+]
 ```
 
 ## Error responses
 
-#### `COMPETENCES_NOT_FOUND` (404 Not Found)
+#### `UNAUTHORIZED` (401 Unauthorized)
 
-No competences found in the database.
+User is not logged in (JWT token was not provided or is invalid)
 
-#### `COULD_NOT_FETCH_COMPETENCES` (500 Internal Server Error)
+#### `INVALID_TOKEN` (401 Unauthorized)
 
-Could not fetch competences from the database due to an internal error.
+The provided JWT token is invalid (e.g., it is expired, not yet valid, or does not contain the required claims)
 
-#### `INVALID_JWT_TOKEN` (401 Unauthorized)
+#### `TOKEN_NOT_PROVIDED` (401 Unauthorized)
 
-This error occurs when the provided JWT token is not valid.
+No JWT token was provided in the `Authorization` header
 
-#### `TOKEN_EXPIRED` (401 Unauthorized)
+#### `TOKEN_REVOKED` (401 Unauthorized)
 
-This error is returned when the JWT token has expired and is no longer valid.
+The provided JWT token has been revoked
 
-#### `UNAUTHORIZED` (401 Forbidden)
+#### `INTERNAL_SERVER_ERROR` (500 Internal Server Error)
 
-This error is returned when a request is made without a required JWT token or the token is not provided correctly.
+An unexpected error occurred
