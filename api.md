@@ -4,7 +4,12 @@ All microservices use a REST API (HTTP GET or POST). All functions should return
 
 ## Available APIs
 
+* **Register** - [apis/register.md](apis/register.md)
 * **Login** - [apis/login.md](apis/login.md)
+* **Password Reset** - [apis/password-reset.md](apis/password-reset.md)
+* **Application Submission** - [apis/application-submission.md](apis/application-submission.md)
+* **Competences** - [apis/competences.md](apis/competences.md)
+* **Personal Info** - [apis/personal-info.md](apis/personal-info.md)
 
 ## HTTP response codes
 
