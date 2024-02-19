@@ -31,6 +31,7 @@ If the microservice encounters an error, it should return an object with the fol
 The `error` field should describe the type of error that occured. The error code can be specific to an API call or one of these generic error codes:
 
 * **`MISSING_PARAMETERS` (400 Bad Request)** - User did not provide all required query parameters
+* **`TOKEN_EXPIRED` (401 Unauthorized)** - User's JWT token has expired
 * **`UNKNOWN` (500 Internal Server Error)** - Unknown error
 
 The error type should be translated to an error description on the frontend so that the user knows what went wrong.
