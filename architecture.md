@@ -31,6 +31,11 @@
  	* **Time:** 2024-01-31
   	* **Reasoning:** Enforces naming conventions. 
    	* **Who decided:** Daniel
+  
+ * **Decision:** Let all non-persistent data manipulations which only purpose is to present the manipulated data in the view layer, such as sorting or internationalization, occur in the view layer.
+ 	* **Time:** 2024-02-12
+  	* **Reasoning:** Better separation of concerns. 
+   	* **Who decided:** Daniel
 
 ## Backend architecture
 
