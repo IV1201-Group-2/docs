@@ -4,7 +4,12 @@ All microservices use a REST API (HTTP GET or POST). All functions should return
 
 ## Available APIs
 
+* **Register** - [apis/register.md](apis/register.md)
 * **Login** - [apis/login.md](apis/login.md)
+* **Password Reset** - [apis/password-reset.md](apis/password-reset.md)
+* **Application Submission** - [apis/application-submission.md](apis/application-submission.md)
+* **Competences** - [apis/competences.md](apis/competences.md)
+* **Personal Info** - [apis/personal-info.md](apis/personal-info.md)
 
 ## HTTP response codes
 
@@ -31,6 +36,7 @@ If the microservice encounters an error, it should return an object with the fol
 The `error` field should describe the type of error that occured. The error code can be specific to an API call or one of these generic error codes:
 
 * **`MISSING_PARAMETERS` (400 Bad Request)** - User did not provide all required query parameters
+* **`TOKEN_EXPIRED` (401 Unauthorized)** - User's JWT token has expired
 * **`UNKNOWN` (500 Internal Server Error)** - Unknown error
 
 The error type should be translated to an error description on the frontend so that the user knows what went wrong.
