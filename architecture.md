@@ -136,6 +136,63 @@
 	  provides good performance and security.
 	* **Who decided:** Azmeer
 
+
+### Java-based microservices
+
+- **Decision:** MVC architecture
+
+  - **Time:** 2024-01-28
+  - **Reasoning:** MVC adds modularity, which allows for code flexibility and being ability to modify different layers and components in isolation.
+  - **Who decided:** Yas
+
+- **Decision:** Java version 21
+
+  - **Time:** 2024-01-28
+  - **Reasoning:** Java 21 is the latest Java version that is compatible with Heroku and has the latest compatibility updates with dependencies.
+  - **Who decided:** Yas
+
+- **Decision:** Spring Boot framework
+
+  - **Time:** 2024-01-28
+  - **Reasoning:** The Spring Boot framework allows for easy dependency injection of different layers, benefiting the MVC architecture. Moreover, the framework supports the use of JUnit testing which is a widely used Java testing tool.
+  - **Who decided:** Yas
+
+- **Decision:** Spring boots @Autowired
+
+  - **Time:** 2024-01-30
+  - **Reasoning:** The @Autowired annotation maintains loose coupling.
+  - **Who decided:** Yas
+
+- **Decision:** Use of @Transactional
+
+  - **Time:** 2024-01-31
+  - **Reasoning:** For methods where anything is added or modified in the database, the @transactional annotation provides data consistency and rolls back the changes made by a method in case of an exception. Furthermore, the annotation allows for an easily readable code and reduces boilerplate code.
+  - **Who decided:** Yas
+
+- **Decision:** JUnit testing
+
+  - **Time:** 2024-02-02
+  - **Reasoning:** A widely used testing framework for Java that automates testing and is well integrated with IntelliJ IDEA.
+  - **Who decided:** Yas
+
+- **Decision:** TestContainers
+
+  - **Time:** 2024-02-02
+  - **Reasoning:** TestContainers provide a containerized database environment for testing the different layers in an isolated environment. As a new instance of the database is created for each test, the risk of test dependency is reduced. TestContainers also supports PostgreSQL.
+  - **Who decided:** Yas
+
+- **Decision:** DTO's
+
+  - **Time:** 2024-02-02
+  - **Reasoning:** DTOs achieve encapsulation of data that passes through the different layers of the application. Data transfer objects provide only the data necessary to be exposed to the client.
+  - **Who decided:** Yas
+
+- **Decision:** Lomboks annotations
+  - **Time:** 2024-02-03
+  - **Reasoning:** Lombok provides access to many useful annotations that reduce boilerplate code. The @Data annotation provides getters and setters. Depending on the classes implemented, @AllArgsConstructor or @NoArgsConstructor was added where a constructor was needed with all arguments for all fields or no arguments. Lastly, @Builder was useful for providing a builder pattern to easily create an object.
+  - **Who decided:** Yas
+
+
 ## Cloud hosting
 
 * **Decision:** Heroku
