@@ -22,6 +22,10 @@ The API will automatically authenticate the user after resetting the password. T
 
 User did not provide a new password.
 
+#### `TOKEN_NOT_PROVIDED` (401 Unauthorized)
+
+No JWT token was provided in the `Authorization` header.
+
 #### `TOKEN_EXPIRED` (401 Unauthorized)
 
 Reset token has expired.
