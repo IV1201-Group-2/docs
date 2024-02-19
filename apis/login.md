@@ -29,6 +29,8 @@ The token is a JWT token encoded with HS256. The payload should decode to a JSON
 
 ```json
 {
+    "usage": "login",
+
     "id": 0,
     "username": "mockuser_applicant",
     "email": "mockuser-applicant@example.com",
@@ -50,16 +52,17 @@ User did not provide identity, password or desired role.
 #### `MISSING_PASSWORD` (404 Not Found)
 
 User does not have a password in the database.
-They should be informed of what they need to do to set a new password.
+
+This should be handled by sending the user an email but due to constraints of the project this isn't possible for the example data given. Instead, the API directly returns a JWT token that can be used with the password reset API. The JWT token has a very similar payload to a successful response, except its `usage` is set to `reset`.
 
 #### `WRONG_IDENTITY` (401 Unauthorized)
 
-No account was found with that specific username or email address
+No account was found with that specific username or email address.
 
 #### `WRONG_PASSWORD` (401 Unauthorized)
 
-Account was found but the wrong password was provided
+Account was found but the wrong password was provided.
 
 #### `ALREADY_LOGGED_IN` (400 Bad Request)
 
-User is already logged in (JWT token was provided)
+User is already logged in (JWT token was provided).
