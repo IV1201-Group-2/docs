@@ -197,6 +197,52 @@
   - **Reasoning:** Lombok provides access to many useful annotations that reduce boilerplate code. The @Data annotation provides getters and setters. Depending on the classes implemented, @AllArgsConstructor or @NoArgsConstructor was added where a constructor was needed with all arguments for all fields or no arguments. Lastly, @Builder was useful for providing a builder pattern to easily create an object.
   - **Who decided:** Yas
 
+### Golang-based microservices
+
+* **Decision:** Layered architecture
+  - **Time:** 2024-01-31
+  - **Reasoning:** All microservices written in Go should have a layered architecture. The presentation layer is handled by the framework of choice while the service layer implements the public API and the database layer handles interactions with a real or mock database. The model layer strictly contains structures and functions that model our application architecture (database objects, API responses, etc).
+  - **Who decided:** Hannes
+
+* **Decision:** Echo framework
+  - **Time:** 2024-01-31
+  - **Reasoning:** We decided to use the Echo framework for handling HTTP routing and middleware. The framework is a great choice for REST APIs because it has a minimalist design that's simple to understand while being modern, production-tested and very performant. It has built-in middleware to handle recovering from errors, JWT token authentication and more.
+  - **Who decided:** Hannes
+
+* **Decision:** Go modules
+  - **Time:** 2024-01-31
+  - **Reasoning:** Go modules are a feature added in Go 1.13 that allows the service to declare the required Go version and its dependencies. We use this feature because it allows Heroku to automatically discover how the application should be built without requiring a Dockerfile.
+  - **Who decided:** Hannes
+
+* **Decision:** Heroku buildpack
+  - **Time:** 2024-01-31
+  - **Reasoning:** We use the Heroku Go buildpack to build the application without having to create a Dockerfile. Heroku automatically picks the right version of Go and downloads dependencies.
+  - **Who decided:** Hannes
+
+* **Decision:** Documentation format
+  - **Time:** 2024-02-06
+  - **Reasoning:** Go doesn't have an explicit format for documentation like Java but it provides some recommendations (such as "package comments should start with 'The package X does Y'"). Our projects follow all recommendations with comments for all public structures and functions.
+  - **Who decided:** Hannes
+
+* **Decision:** .env files
+  - **Time:** 2024-02-06
+  - **Reasoning:** Our Go microservices will load environment variables from .env files automatically using godotenv. This allows to set up a development environment easily for multiple users.
+  - **Who decided:** Hannes
+
+* **Decision:** Validation with go-playground/validator
+  - **Time:** 2024-02-05
+  - **Reasoning:** Echo allows us to validate parameters that are sent by the user but it doesn't provide a built-in validator. go-playground/validator is a powerful and popular choice that allows us to automatically validate that parameters are required or that they follow a certain format depending on annotiations in a structure.
+  - **Who decided:** Hannes
+
+* **Decision:** Testing with Testify
+  - **Time:** 2024-02-06
+  - **Reasoning:** Go doesn't have a lot of built-in functionality for testing. Testify combined with Echo allows us to simulate HTTP requests and assert certain conditions with only a few lines of code.
+  - **Who decided:** Hannes
+
+* **Decision:** Linting with golangci-lint
+  - **Time:** 2024-02-06
+  - **Reasoning:** golangci-lint is an aggregator for Go linters and static analysis tools. It allows us to run 100+ linters automatically and in parallel to ensure as many mistakes in the code are covered as possible. We enable all linters except a few that don't make sense for our project.
+  - **Who decided:** Hannes
 
 ## Cloud hosting
 
