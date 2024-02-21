@@ -22,21 +22,7 @@ This API is used for applicants to register an account in order to create appilc
 
 ## Successful response - HTTP/1.1 200 OK
 
-The API returns an object with the following structure:
-
-```json
-POST /api/register HTTP/1.1
-Content-Type: application/json
-
-{
-  "name": "Damon",
-  "surname": "Depp",
-  "pnr": "2001-12-12-3242",
-  "email": "damonDepp@example.com",
-  "password": "securepassword",
-  "username": "damonpitt",
-}
-```
+The API responds with an HTTP status 200 OK.
 
 ## Error responses
 
