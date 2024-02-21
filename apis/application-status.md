@@ -17,4 +17,4 @@ The API responds with an HTTP status 200 OK.
 
 #### `INVALID_DATA` (400 Bad Request)
 
-User did not provide either or all of name, surname, social security number, email, password or username.
+Either an invalid person_id or an invalid status was received. A person_id is considered invalid if it can not be found in the person table. A status is considered invalid if it is anything other then Accept/Reject/Pending.
