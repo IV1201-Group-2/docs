@@ -44,6 +44,25 @@
 	* **Reasoning:** Microservices allows the team to work in the languages and frameworks they're most comfortable with. It also lets us scale the project easily.
 	* **Who decided:** The group
 
+
+* **Decision:** RESTful APIs
+  * **Time:** Meeting 1 (2024-01-19)
+  * **Reasoning:** RESTful APIs are a good fit for our project because they are stateless, cacheable, and scalable. They also provide a good separation of concerns and are easy to understand and use.
+  * **Who decided:** The group
+
+
+* **Decision:** PostgreSQL
+	* **Time:** Meeting 1 (2024-01-19)
+	* **Reasoning:** PostgreSQL is a powerful, open-source object-relational database system. It has a strong reputation for reliability, data integrity, and correctness. It also compatible with the existing SQL dump.
+	* **Who decided:** The group
+
+
+* **Decision:** Server-side Data validation
+	* **Time:** Meeting 1 (2024-01-19)
+	* **Reasoning:** We decided to validate data on the server side to ensure that the data is correct and consistent. This is especially important when dealing with user input.
+	* **Who decided:** The group
+
+
 ### Python-based microservices
 * **Decision:** Layered architecture
 	* **Time:** 2024-01-19
@@ -77,7 +96,7 @@
 
 * **Decision:** Flask-SQLAlchemy for database access
 	* **Time:** 2024-01-19
-	* **Reasoning:** Flask-SQLAlchemy is a popular library for database access in Flask. It provides an easy-to-use ORM and good support for migrations.
+	* **Reasoning:** Flask-SQLAlchemy is a popular library for database access in Flask. It provides an easy-to-use ORM and good support for migrations. It 
 	* **Who decided:** Azmeer
 
 
@@ -95,7 +114,7 @@
 
 * **Decision:** Python 3.9
 	* **Time:** 2024-01-26
-	* **Reasoning:** Python 3.9 is the latest version of Python and has the best performance and security. 
+	* **Reasoning:** Python 3.9 is a good fit for the microservices we're building. It's a stable version of Python and has good support for the libraries we're using.
 	* **Who decided:** Azmeer
 
 
@@ -111,9 +130,26 @@
 	* **Who decided:** Azmeer
 
 
+* **Decision:** Singleton pattern for extensions
+	* **Time:** 2024-01-31
+	* **Reasoning:** The singleton pattern is a good way to organize extensions in Flask. The extensions are shared across the application and are only instantiated once.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Decorator for JWT authentication
+	* **Time:** 2024-01-31
+	* **Reasoning:** Decorators are a good way to organize JWT authentication in Flask. They allow us to apply the same authentication logic to multiple routes.
+	* **Who decided:** Azmeer
+
 * **Decision:** Logging for monitoring
 	* **Time:** 2024-02-01
 	* **Reasoning:** Logging is a good way to keep track of what's happening in the microservices. It makes the codebase more maintainable and helps with troubleshooting.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** Application factory pattern
+	* **Time:** 2024-02-01
+	* **Reasoning:** The application factory pattern is a good way to organize the Flask app. It makes the codebase more maintainable and reduces time spent on troubleshooting.
 	* **Who decided:** Azmeer
 
 
@@ -135,12 +171,26 @@
 	* **Who decided:** Azmeer
 
 
+* **Decision:** CORS for security
+	* **Time:** 2024-02-05
+	* **Reasoning:** CORS is a good way to ensure that the microservices are secure. It makes the codebase more maintainable and reduces time spent on troubleshooting.
+	* **Who decided:** Azmeer
+
+
 * **Decision:** Gunicorn for production server
 	* **Time:** 2024-02-07
-	* **Reasoning:** Gunicron is a popular production server for Python, easy to set up and recommended by Heroku. It 
+	* **Reasoning:** Gunicorn is a popular production server for Python, easy to set up and recommended by Heroku. It 
 	  provides good performance and security.
 	* **Who decided:** Azmeer
 
+
+* **Decision:** Global error handling
+	* **Time:** 2024-02-18
+	* **Reasoning:** Global error handling is a good way to ensure that the microservices work as expected. It makes the codebase more maintainable and reduces time spent on troubleshooting.
+	* **Who decided:** Azmeer
+
+
+* **Decision:** 
 
 ### Java-based microservices
 
