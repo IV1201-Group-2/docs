@@ -9,7 +9,12 @@
 
 * **Decision:** Client-side internationalization
 	* **Time:** Meeting 2 (2024-01-22)
-	* **Reasoning:** We decided on storing translations on the client-side because it provides separation and low coupling between the frontend and backend. The database will store IDs that are presented in the appropriate language by the frontend view.
+	* **Reasoning:** We decided on storing translations on the client-side because it provides separation and low coupling between the frontend and backend. When there is a need to store a translated phrase in the database, e.g. as the result of the applicant having selected certain competences when submitting their job application, the last part of the I18n key path (the part after the path's last dot) will be stored instead of the actual translation.
+	* **Who decided:** Daniel
+
+* **Decision:** Internationalized strings should never be persisted as is, but rather their I18n keys.
+	* **Time:** Meeting 2 (2024-01-22)
+	* **Reasoning:** When there is a need to store an internationalized string in the database, e.g. as the result of the applicant having selected certain competences when submitting their job application, the last part of the I18n key path (the part after the path's last dot) will be stored instead of the actual translation.
 	* **Who decided:** Daniel
 
  * **Decision:** TypeScript
@@ -32,10 +37,30 @@
   	* **Reasoning:** Enforces naming conventions. 
    	* **Who decided:** Daniel
   
+ * **Decision:** All functions used for validation rules should be stored inside the class `src/util/validation.ts#ValidationBuilder`.
+ 	* **Time:** 2024-01-31
+  	* **Reasoning:** Facilitates validation handling.
+   	* **Who decided:** Daniel
+  
  * **Decision:** Let all non-persistent data manipulations which only purpose is to present the manipulated data in the view layer, such as sorting or internationalization, occur in the view layer.
  	* **Time:** 2024-02-12
   	* **Reasoning:** Better separation of concerns. 
    	* **Who decided:** Daniel
+
+* **Decision:** Internationalized strings representing competences should have an associated ID in their dedicated database table.
+	* **Time:** 2024-02-18
+	* **Reasoning:** To accomodate the existing structure of the table dedicated to storing an applicant's competences (`competence_profile` which associates the applicant's `person_id` with a `competence_id`) when migrating from the legacy database, all internationalized competences should be associated with a `competence_id` in addition to their I18n key when persisted.
+	* **Who decided:** Daniel, Azmeer
+
+ * **Decision:** All unsuccessful API calls should be handled by displaying a [Vuetify dialog](https://vuetifyjs.com/en/components/dialogs/#api) in one of two ways: 1) either by inserting the dialog in the same component that made the API call, or 2) by calling `src/stores/error.ts#showGenericErrorMsg()` to display `src/components/generic/GenericError.vue` which is rendered in the root component `src/App.vue`. Method #1 is preferred when the cause of the error is known and customization of the dialog is required, such as adding custom buttons with custom actions. Since the cause of the error must be know in advance, this method is usually used when the cause of the error can be pinned down by the response status code. Method #2 is preferred when the error is unexpected and thus requires generic handling. Alternatively, it may also be used when the cause is unknown whereas the effect is known, e.g. personal information about the applicant cannot be retrieved for some unknown reason, but it is known that the applicant will not be able to submit their application because of the failed retrieval. In the latter scenario, the developer may pass as optional argument to the `showGenericErrorMsg()` a string to be concatenated with the I18n key path `generic-key.specific-msg.` that will be translated as the message to be displayed within the generic error dialog. If no argument is passed, the generic message specified by the I18n key path `generic-key.generic-msg` will be displayed instead. The generic error dialog allows for no customization of the actions that can be taken, and only has one button which when clicked logs out the user and returns them to the login page.
+ 	* **Time:** 2024-02-21
+  	* **Reasoning:** Enforces consistent error handling.
+   	* **Who decided:** Daniel
+  
+* **Decision:** The base URL (everything from the protocol to the domain, e.g. `https://test-service.herokuapp.com`) for each API service used by the client should be stored as a field inside the variable `BASE_URL` declared in `src/util/api.ts`.
+	* **Time:** 2024-02-21
+	* **Reasoning:** Facilitates handling of API URLS.
+	* **Who decided:** Daniel
 
 ## Backend architecture
 
