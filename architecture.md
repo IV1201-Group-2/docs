@@ -340,7 +340,7 @@
 	* **Reasoning:** Authentication with JWT tokens allows us to verify user details without unnecessary API communication. The only thing a microservice needs knowledge of to verify a user is a shared secret.
 	* **Who decided:** Hannes
 
-## Code documentation
+## Documentation
 
 * **Decision:** Full documentation coverage
 	* **Time:** Meeting 1 (2024-01-19)
@@ -359,6 +359,16 @@
 	* **Time:** Meeting 1 (2024-01-19)
 	* **Reasoning:** For microservices written in Java, Maven will be used as the build tool. For Python and Go the recommended included build tool will be used.
 	* **Who decided:** Yas and Daniel
+
+ * **Decision:** All headers in the microservice repo docs must have the following structure: Title, General Info, Project Setup, Directory Structure and Descriptions. Additional headers are allowed.
+	* **Time:** 2024-03-01
+	* **Reasoning:** 
+	* **Who decided:** Azmeer, Hannes, Daniel
+
+  * **Decision:** If environment variables are used, specify where they are defined in the microservice repo docs.
+	* **Time:** 2024-03-01
+	* **Reasoning:** 
+	* **Who decided:** Azmeer, Hannes, Daniel
 
 ## Version control
 
