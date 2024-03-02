@@ -272,6 +272,26 @@
   - **Reasoning:** Lombok provides access to many useful annotations that reduce boilerplate code. The @Data annotation provides getters and setters. Depending on the classes implemented, @AllArgsConstructor or @NoArgsConstructor was added where a constructor was needed with all arguments for all fields or no arguments. Lastly, @Builder was useful for providing a builder pattern to easily create an object.
   - **Who decided:** Yas
 
+- **Decision:** Global Exception handler
+- **Time:** 2024-02-09
+- **Reasoning:** Significant benefit in centralizing logs and maintaining consistent custom error responses and HTTP status responses.
+- **Who decided:** Yas
+
+- **Decision:** Use of @Value
+- **Time:** 2024-02-10
+- **Reasoning:** Promotes type safety, and code can be refactored without needing to reconfigure accessing of Heroku environment variables.
+- **Who decided:** Yas
+
+- **Decision:** Use of Builder pattern
+- **Time:** 2024-02-10
+- **Reasoning:** Enhances separation of concerns since the construction logic is kept in a separate builder class. Moreover, the builder allows for maintaining readability when constructing objects with many parameters.
+- **Who decided:** Yas
+
+- **Decision:** Log4j logging library
+- **Time:** 2024-02-21
+- **Reasoning:** Widely used and well integrated with Spring boot. Various parameters, such as IP, Id, etc. can be easily inserted into logs.
+- **Who decided:** Yas
+
 ### Golang-based microservices
 
 * **Decision:** Layered architecture
