@@ -57,11 +57,7 @@ This should be handled by sending the user an email but due to constraints of th
 
 #### `WRONG_IDENTITY` (401 Unauthorized)
 
-No account was found with that specific username or email address.
-
-#### `WRONG_PASSWORD` (401 Unauthorized)
-
-Account was found but the wrong password was provided.
+No account was found with that specific username, email address and password combination.
 
 #### `ALREADY_LOGGED_IN` (400 Bad Request)
 
