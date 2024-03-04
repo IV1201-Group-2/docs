@@ -66,3 +66,7 @@ After the database is set up, use the [SQL schema](https://github.com/IV1201-Gro
 The JWT secret is a secret key shared between every microservice to authenticate users without requiring communication with the database or other services. The JWT secret can be any string but to be secure it should be a long and random string that is hard to guess.
 
 You can use the command `openssl rand -hex 32` to generate a random 256-bit string. Set the `JWT_SECRET` variable in every microservice to the resulting string.
+
+### Configuring API URLs in frontend
+
+Heroku will assign a random URL to every service, so the URLs need to be manually configured in frontend applications. Follow the instructions in the client [README](https://github.com/IV1201-Group-2/client?tab=readme-ov-file#how-to-handle-api-calls) once the backend has been set up.
