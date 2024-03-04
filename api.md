@@ -8,6 +8,7 @@ All microservices use a REST API (HTTP GET or POST). All functions should return
 * **Login** - [apis/login.md](apis/login.md)
 * **Password Reset** - [apis/password-reset.md](apis/password-reset.md)
 * **Application Submission** - [apis/application-submission.md](apis/application-submission.md)
+* **Application Status** - [apis/application-status.md](apis/application-status.md)
 * **Competences** - [apis/competences.md](apis/competences.md)
 * **Personal Info** - [apis/personal-info.md](apis/personal-info.md)
 
